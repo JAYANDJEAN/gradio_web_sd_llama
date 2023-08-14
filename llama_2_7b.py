@@ -53,7 +53,7 @@ def chat(message: str, chat_history: List[Tuple[str, str]], system_prompt: str,
         yield ''.join(outputs)
 
 
-demo = gr.ChatInterface(chat, title=model_name,
+demo = gr.ChatInterface(chat, title="LlaMa-2-7b-Chat",
                         chatbot=gr.Chatbot(label='Chatbot'),
                         textbox=gr.Textbox(
                             container=False,
