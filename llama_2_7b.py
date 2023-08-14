@@ -53,27 +53,19 @@ def chat(message: str, chat_history: List[Tuple[str, str]], system_prompt: str,
         yield ''.join(outputs)
 
 
-demo = gr.ChatInterface(chat, title="LlaMa-2-7b-Chat",
-                        chatbot=gr.Chatbot(label='Chatbot'),
-                        textbox=gr.Textbox(
-                            container=False,
-                            show_label=False,
-                            placeholder='Type a message...',
-                            scale=10,
-                        ),
+demo = gr.ChatInterface(chat,
+                        title="LLaMa-2-7b-Chat",
                         description="It's a personal demo of LLM!",
                         additional_inputs=[
                             gr.Textbox(value=DEFAULT_SYSTEM_PROMPT, label="System Prompt", lines=5),
-                            gr.Slider(
-                                label='Max new tokens',
-                                minimum=100,
-                                maximum=MAX_MAX_NEW_TOKENS,
-                                step=1,
-                                value=DEFAULT_MAX_NEW_TOKENS,
-                            )
+                            gr.Slider(label='Max new tokens',
+                                      minimum=100,
+                                      maximum=MAX_MAX_NEW_TOKENS,
+                                      step=1,
+                                      value=DEFAULT_MAX_NEW_TOKENS)
                         ],
                         additional_inputs_accordion_name='Advanced options'
-                        )
+                        ).queue()
 
 if __name__ == "__main__":
-    demo.queue().launch(server_name="0.0.0.0")
+    demo.launch(server_name="0.0.0.0")
