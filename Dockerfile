@@ -1,9 +1,15 @@
-FROM nvcr.io/nvidia/pytorch:23.06-py3
+FROM anibali/pytorch:2.0.0-cuda11.8-ubuntu22.04
 LABEL authors="yuan.feng"
 
-RUN mkdir /app
-COPY * /app
-WORKDIR /app
-RUN pip3 install -r requirements.txt
+# Install system libraries required by OpenCV.
+RUN sudo apt-get update \
+ && sudo apt-get install -y libgl1-mesa-glx libgtk2.0-0 libsm6 libxext6 \
+ && sudo rm -rf /var/lib/apt/lists/*
 
-ENTRYPOINT ["python","./app_llama.py"]
+WORKDIR /app
+COPY * ./
+RUN pip install -r requirements.txt
+RUN pip uninstall transformer-engine -y
+
+
+ENTRYPOINT ["python","./main.py"]
