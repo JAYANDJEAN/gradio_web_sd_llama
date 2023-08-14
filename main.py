@@ -10,7 +10,7 @@ if torch.cuda.is_available():
     elif model_name == 'stable_diffusion':
         from sdxl_base_1 import demo
 
-        demo.launch(server_name="0.0.0.0")
+        demo.queue().launch(server_name="0.0.0.0")
     else:
         print('nothing!')
 
