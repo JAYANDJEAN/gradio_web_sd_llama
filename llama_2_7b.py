@@ -11,6 +11,8 @@ DEFAULT_MAX_NEW_TOKENS = 1024
 DEFAULT_SYSTEM_PROMPT = """
 You are a helpful, respectful and honest assistant. Always answer as helpfully as possible, while being safe. Your answers should not include any harmful, unethical, racist, sexist, toxic, dangerous, or illegal content. Please ensure that your responses are socially unbiased and positive in nature.\n\n
 If a question does not make any sense, or is not factually coherent, explain why instead of answering something not correct. If you don't know the answer to a question, please don't share false information."""
+DESCRIPTION = """
+This Space demonstrates model Llama-2-7b-chat by Meta, a Llama 2 model with 7B parameters fine-tuned for chat instructions."""
 
 model_id = '/app/models/llama-2-7b-chat-hf'
 tokenizer = AutoTokenizer.from_pretrained(model_id)
@@ -55,7 +57,7 @@ def chat(message: str, chat_history: List[Tuple[str, str]], system_prompt: str,
 
 demo = gr.ChatInterface(chat,
                         title="LLaMa-2-7b-Chat",
-                        description="It's a personal demo of LLM!",
+                        description=DESCRIPTION,
                         additional_inputs=[
                             gr.Textbox(value=DEFAULT_SYSTEM_PROMPT, label="System Prompt", lines=5),
                             gr.Slider(label='Max new tokens',
