@@ -1,4 +1,5 @@
 import torch
+import sys
 
 model_name = sys.argv[1]
 if torch.cuda.is_available():
