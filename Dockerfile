@@ -7,7 +7,8 @@ RUN sudo apt-get update \
  && sudo rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
-COPY * ./
+COPY main.py requirements.txt ./
+COPY script /app/script
 RUN pip install -r requirements.txt
 RUN pip uninstall transformer-engine -y
 
