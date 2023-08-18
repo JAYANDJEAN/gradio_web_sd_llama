@@ -50,7 +50,7 @@ demo = gr.Interface(
     examples=[["hf-logo.png",
                "aerial view, a futuristic research complex in a bright foggy jungle, hard lighting",
                "low quality, bad quality, sketches"],
-              ["bird.jpg",
+              ["bird.png",
                "ultrarealistic shot of a furry blue bird",
                "low quality, bad quality, sketches"]
               ]
