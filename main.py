@@ -20,6 +20,9 @@ if torch.cuda.is_available():
     elif model_name == 'stable_diffusion':
         from sdxl_base_1 import demo
 
+    elif model_name == 'canny':
+        from controlnet_canny import demo
+
     else:
         demo = gr.Interface(fn=no_model, inputs="text", outputs="text")
 else:
