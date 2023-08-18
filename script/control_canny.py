@@ -47,10 +47,10 @@ demo = gr.Interface(
     allow_flagging="never",
     title="Stable Diffusion XL 1.0",
     description="<p style='text-align: center'>Gradio Demo for SDXL 1.0. </p> <p style='text-align: center'>",
-    examples=[["./data/hf-logo.png",
+    examples=[["./script/data/hf-logo.png",
                "aerial view, a futuristic research complex in a bright foggy jungle, hard lighting",
                "low quality, bad quality, sketches"],
-              ["./data/bird.png",
+              ["./script/data/bird.png",
                "ultrarealistic shot of a furry blue bird",
                "low quality, bad quality, sketches"]
               ]
