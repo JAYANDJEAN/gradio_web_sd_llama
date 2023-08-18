@@ -52,9 +52,6 @@ demo = gr.Interface(
                "low quality, bad quality, sketches"],
               ["bird.png",
                "ultrarealistic shot of a furry blue bird",
-               "low quality, bad quality, sketches"],
-              ["room.png",
-               "Cinematic, neoclassical table in the living room, cinematic, contour, lighting, highly detailed, winter, golden hour",
                "low quality, bad quality, sketches"]
               ]
 
