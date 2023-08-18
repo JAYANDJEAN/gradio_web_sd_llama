@@ -15,13 +15,13 @@ def no_cpu(name):
 
 if torch.cuda.is_available():
     if model_name == 'llama':
-        from llama_2_7b import demo
+        from script.llama_2_7b import demo
 
     elif model_name == 'stable_diffusion':
-        from sdxl_base_1 import demo
+        from script.sdxl_base_1 import demo
 
     elif model_name == 'canny':
-        from controlnet_canny import demo
+        from script.controlnet_canny import demo
 
     else:
         demo = gr.Interface(fn=no_model, inputs="text", outputs="text")
